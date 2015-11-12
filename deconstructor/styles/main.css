@@ -1,0 +1,118 @@
+body {
+  background: #a18b9d;
+  font-family: "Timmana", Arial, sans-serif;
+  font-size: 1rem; }
+
+section {
+  width: 100%; }
+
+aside {
+  margin-top: 10px;
+  margin-left: 350px; }
+
+.wrapper {
+  width: 99%;
+  height: 600px;
+  background-color: #80c9ff;
+  border: 0px dotted yellow;
+  padding: 2px; }
+
+p {
+  font-family: "Timmana", Arial, sans-serif;
+  font-size: 0.75em;
+  color: "Timmana", Arial, sans-serif;
+  text-align: center;
+  line-height: 2em; }
+
+div {
+  background-color: aliceblue;
+  margin: 10px;
+  width: 30px;
+  display: inline-block; }
+  div .nested-p {
+    background-color: #80c9ff;
+    font-size: 1.5rem; }
+
+footer {
+  background-color: rgba(216, 235, 241, 0.8);
+  clear: both;
+  padding-top: 3px 0; }
+
+canvas {
+  border: 0px solid black;
+  background: #80c9ff;
+  width: 700px;
+  height: 555px; }
+
+#spinner {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(239, 207, 245, 0.9);
+  border-radius: 50%; }
+
+#test {
+  width: 700px;
+  height: 555px;
+  background-color: #d8ebf1;
+  padding: 2px;
+  float: right;
+  text-align: center; }
+
+#even1 {
+  height: 150px;
+  background-color: #d8ebf1;
+  float: right; }
+
+#odd1 {
+  height: 150px;
+  background-color: rgba(239, 207, 245, 0.9);
+  float: right; }
+
+#unicorn {
+  float: right; }
+
+#choice {
+  width: 200px;
+  height: 50px;
+  background-color: #d8ebf1;
+  float: left; }
+
+#even2 {
+  height: 50px;
+  background-color: #d8ebf1;
+  float: left;
+  display: inline-block; }
+  #even2 .nested-body {
+    background-color: #80c9ff; }
+
+#odd2 {
+  height: 50px;
+  background-color: rgba(239, 207, 245, 0.9);
+  float: left;
+  display: inline-block; }
+  #odd2 .nested-body {
+    background-color: #80c9ff; }
+
+.heart {
+  width: 104px;
+  height: 100px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: url(https://cssanimation.rocks/assets/images/posts/steps/heart.png) no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  animation: fave-heart 1s steps(28); }
+
+.heart:hover {
+  background-position: -2800px 0;
+  transition: background 1s steps(28); }
+
+@keyframes fave-heart {
+  0% {
+    background-position: 0 0; }
+  100% {
+    background-position: -2800px 0; } }
+
+/*# sourceMappingURL=main.css.map */
