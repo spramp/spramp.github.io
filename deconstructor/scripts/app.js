@@ -1,4 +1,4 @@
-// comment
+// Jan Christian Bernabe comments
 window.onload = function () {
 
   var canvas = document.getElementById('canvas');
@@ -6,23 +6,20 @@ window.onload = function () {
   var score = 0;
   var raf;
 
-// Find upper left position of canvas for correcting the
-// mouse coordinates (see below)
+// Find upper left position of canvas for correcting the mouse coordinates (see below)
 
   var canvasOffset=$("#canvas").offset();
   var offsetX=canvasOffset.left;
   var offsetY=canvasOffset.top;
 
-// Make the canvas as large as defined in the style sheet,
-// otherwise you stretch the canvas from its default size
-// to whatever you defined in the css. This will screw up
-// the display and the coordinates of mouse actions
+// Make the canvas as large as defined in the style sheet, otherwise you stretch the canvas from its default size
+// to whatever you defined in the css. You should not size the canvas via css as it has a default value of 300px and 150px.
+// This will screw up the display and the coordinates of mouse actions. It will also screw up the resultion of the ball.
 
   canvas.width = 700;
   canvas.height = 555;
 
-// defining an object 'ball' with properties and a method
-// that can be called to actually draw/paint it on the canvas
+// Below defines the object as 'ball' with properties and a method that can be called to draw/paint it on the canvas
 // using the properties defined for the object
   var ball = {
   x: 50,
@@ -45,7 +42,7 @@ window.onload = function () {
   }
 };
 
-// defining a function 'draw()' that does the following
+// Below defines the function 'draw()' that does the following
 // (1) draws a blank canvas with some given color
 // (2) use the draw() method of the ball object to draw the ball
 // (3) check whether the balls coordinates are outside the canvas area
@@ -72,41 +69,45 @@ function draw() {
   raf = window.requestAnimationFrame(draw);
 };
 
-// Now start animation by requesting an AnimationFrame with the recursivly
+// Below starts the animation by requesting an AnimationFrame with the recursivly
 // defined function draw().
 
 raf = window.requestAnimationFrame(draw);
 
-// Now define some eventListeners that will execute commands if, e.g.,
-// a mouse button was pressed, the mouse moved over the canvas, etc.
-// DO NOT CALL requestAnimationFrame(draw) again! You can stop the
+// Now define some eventListeners that will execute commands if, e.g.,a mouse button was pressed,
+// the mouse moved over the canvas, etc. Remember NOT TO CALL requestAnimationFrame(draw) again, as it speeds up
+// the velocity of the ball. My theory is that by calling it again, the recursiveness redraws the canvas and ball over
+// and over, each time adding to the initial velocity of the ball. You can stop the
 // animation however by using 'window.cancelAnimationFrame(raf)''
 
 canvas.addEventListener('mouseout', function(e){
-  // slow down the ball
+  // This slows down the ball as velocity xy is divided by half.
   ball.vx = ball.vx*1/2;
   ball.vy = ball.vy*1/2;
 });
 
 canvas.addEventListener('mouseover', function(e){
-  // double speed of the ball
+  // This doubles the speed of the ball as the veolocity vy is multiplied by two.
   ball.vx = ball.vx*2;
   ball.vy = ball.vy*2;
 });
 
 canvas.addEventListener('mousedown',function(e){
-  // find canvas coordinates of mouse pointer
+  // Below finds the canvas coordinates of mouse pointer.
   mouseX=parseInt(e.clientX-offsetX);
   mouseY=parseInt(e.clientY-offsetY);
 
- // check whether we hit the ball inside its defined area
- // We use sqrt((x-x0)^2 + (y-y0)^2) to measure the true separation between click and ball center
+// Below checks whether the ball is caught inside of its defined area
+// I used sqrt((x-x0)^2 + (y-y0)^2) [difference between the separation between click coordinate and center of ball]. I used
+// the Pythagorean theorem to solve for the radius.  The distance between the the center of the ball and where you clicked
+// should be smaller than the radius, thus the formula below measures the true separation between click and ball center. The
+// defines a circle and the space in which the click point will or will not let the player win the unicorn.
 
   if (Math.sqrt(Math.pow((mouseX - (ball.x-ball.vx)),2) + Math.pow((mouseY - (ball.y-ball.vy)),2)) <= ball.radius){
       //score +=1;
       window.cancelAnimationFrame(raf);
       $('#unicorn').css("background-image", "url(http://www.janchristianbernabe.com/wp-content/uploads/2015/11/unicorn.jpg)");
-      alert('You got it!');
+      alert('WINNER! Enjoy your pink unicorn!');
   }
 });
 

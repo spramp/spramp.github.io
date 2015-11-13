@@ -1,4 +1,4 @@
-// style guide variables
+// my style guide variables
 
 $headline-text: 3rem; // 3rem;
 $body-text: 1rem; // 1rem;
@@ -17,6 +17,7 @@ body {
 background: rgba(161, 139, 157, 1);
 font-family: $font-family;
 font-size: $body-text;
+cursor: pointer;
 }
 
 section {
