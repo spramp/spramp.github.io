@@ -114,5 +114,12 @@ canvas {
     background-position: 0 0; }
   100% {
     background-position: -2800px 0; } }
+#unicorn {
+  background: #80c9ff;
+  width: 200px;
+  height: 300px;
+  position: fixed;
+  bottom: 200px;
+  right: 350px; }
 
 /*# sourceMappingURL=main.css.map */
