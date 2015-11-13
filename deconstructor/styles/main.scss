@@ -161,3 +161,13 @@ canvas {
     background-position: -2800px 0;
   }
 }
+
+#unicorn {
+    //background-image: url('http://www.janchristianbernabe.com/wp-content/uploads/2015/11/unicorn.jpg');
+    background: $color;
+    width: 200px;
+    height: 300px;
+    position: fixed;
+    bottom: 200px;
+    right: 350px;
+}
