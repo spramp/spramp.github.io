@@ -11,14 +11,14 @@ My game is called POP! POP! POP!. It is a single player game, though ultimately 
 The game is an MVP version. That is, there are components yet to  be created.  I would like for more than one bouncing ball to appear, which would create a rectangle of bouncing balls that the user would need to pop within a finite of time. If it is a multi-player game, the player who scores the most popped bubbles would win.  Also, I have a nav bar on the lower left that has numbers that, when the new version is created, would allow the user to change the velocity of the bubble(s).  I would also like to make the game responsive to different types of browsers.  Right now it meant only to be played on a laptop or desktop.
 
 **Technologies**
-HTML
-CSS
-SASS
-JAVASCRIPT
-JQUERY
-CANVAS
-BASIC GEOMETRY
-BRAIN POWER
+HTML, 
+CSS, 
+SASS, 
+JAVASCRIPT, 
+JQUERY, 
+CANVAS, 
+BASIC GEOMETRY, 
+BRAIN POWER, 
 
 Last updated: November 13, 2015
 
